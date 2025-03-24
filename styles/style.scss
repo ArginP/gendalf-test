@@ -4,15 +4,34 @@ $mainBlueColor: #00B7EC;
 $mainBlueHighlightColor: #1998D5;
 $mainGreenColor: #9BCC37;
 $mainGreenHighlightColor: #77BA04;
-
 $whiteColor: #FFFFFF;
 
-@mixin text-18px {
+$darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
+
+@mixin text {
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
   line-height: 100%;
   letter-spacing: 0;
+}
+
+@mixin text-18px($font-size: 18px, $font-weight: 400) {
+  @include text;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin container {
+  display: flex;
+  align-items: center;
+}
+
+@mixin container-w1280($width: 1280px) {
+  @include container;
+  width: $width;
+}
+
+@mixin margin-top($mt) {
+  margin: $mt auto 0 auto;
 }
 
 .header {
@@ -23,10 +42,8 @@ $whiteColor: #FFFFFF;
   width: 100%;
 
   &__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1280px;
+    @include container-w1280;
+
   }
 
   &__logo {
@@ -66,5 +83,94 @@ $whiteColor: #FFFFFF;
     border-radius: 5px;
     cursor: pointer;
     @include text-18px;
+
+    &:hover {
+      color: $mainBlueHighlightColor;
+    }
   }
 }
+
+.main__container {
+  @include container;
+  justify-content: center;
+}
+
+.main__hello-section {
+  @include container-w1280;
+
+  &__container {
+    @include container;
+    flex-direction: column;
+    height: 568px;
+    width: 100%;
+    background-image: url(../assets/hello__background--desktop.png);
+    background-color: rgba(0, 47, 61, 0.7);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__title {
+    @include container;
+    width: 660px;
+    height: 174px;
+    @include text-18px(64px, 700);
+    text-align: center;
+    color: $whiteColor;
+    line-height: 5.437rem;
+    @include margin-top(64px);
+  }
+
+  &__text {
+    @include container-w1280(834px);
+    @include text-18px(25px);
+    text-align: center;
+    color: $whiteColor;
+    @include margin-top(20px);
+    text-shadow: 0 4px 4px 0 #00000080;
+    line-height: 2.125rem;
+  }
+
+  &__button-group {
+    @include container;
+    justify-content: space-between;
+    width: 565px;
+    height: 51px;
+    @include margin-top(43px);
+    align-items: flex-start;
+
+    button {
+      height: 50px;
+    }
+
+    &__button--primary {
+      width: 175px;
+      background-color: $mainGreenColor;
+      border: none;
+      border-radius: 5px;
+      color: $whiteColor;
+      @include text-18px(18px, 700);
+      cursor: pointer;
+
+      &:hover {
+        background-color: $mainGreenHighlightColor;
+      }
+    }
+
+    &__button--secondary {
+      width: 327px;
+      background-color: $whiteColor;
+      border: none;
+      border-radius: 5px;
+      color: $mainGreenColor;
+      @include text-18px(18px, 700);
+      cursor: pointer;
+
+      &:hover {
+        color: $mainGreenHighlightColor;
+      }
+    }
+  }
+}
+
+
