@@ -446,6 +446,7 @@
   z-index: 2;
   position: absolute;
   right: calc(50% + 165px);
+  cursor: pointer;
 }
 
 .main__feed-section {
