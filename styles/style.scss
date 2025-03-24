@@ -93,6 +93,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 .main__container {
   @include container;
   justify-content: center;
+  flex-direction: column;
 }
 
 .main__hello-section {
