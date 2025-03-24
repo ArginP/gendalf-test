@@ -5,6 +5,8 @@ $mainBlueHighlightColor: #1998D5;
 $mainGreenColor: #9BCC37;
 $mainGreenHighlightColor: #77BA04;
 $whiteColor: #FFFFFF;
+$lightGrayColor: #fafafa;
+$grayColor: #666666;
 
 $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 
@@ -43,7 +45,6 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 
   &__container {
     @include container-w1280;
-
   }
 
   &__logo {
@@ -94,6 +95,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
   @include container;
   justify-content: center;
   flex-direction: column;
+  background-color: $lightGrayColor;
 }
 
 .main__hello-section {
@@ -174,4 +176,106 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
   }
 }
 
+.main__about-section {
+  @include container-w1280;
+  background-color: $whiteColor;
 
+  &__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 519px;
+    width: 100%;
+  }
+
+  &__left-container {
+    @include container-w1280(728px);
+    flex-direction: column;
+    margin-left: 10px;
+    align-items: start;
+  }
+
+  &__title {
+    @include text-18px(36px, 300);
+    color: $mainBlueColor;
+    margin-top: 50px;
+  }
+
+  &__text {
+    @include container;
+    flex-direction: column;
+    gap: 10px;
+    @include text-18px;
+    color: $grayColor;
+    margin-top: 20px;
+    line-height: 1.563rem;
+  }
+
+  &__button-group {
+    @include container;
+    height: 50px;
+    margin-top: 20px;
+    gap: 21px;
+
+    &__button--primary {
+      height: 100%;
+      width: 225px;
+      background-color: $mainBlueColor;
+      border: none;
+      border-radius: 5px;
+      color: $whiteColor;
+      @include text-18px(18px, 700);
+      cursor: pointer;
+
+      &:hover {
+        background-color: $mainBlueHighlightColor;
+      }
+    }
+
+    &__button--secondary {
+      height: 100%;
+      width: 327px;
+      background-color: $whiteColor;
+      border: 1px solid $mainBlueColor;
+      border-radius: 5px;
+      color: $mainBlueColor;
+      @include text-18px(18px, 700);
+      cursor: pointer;
+
+      &:hover {
+        color: $mainBlueHighlightColor;
+        border-color: $mainBlueHighlightColor;
+      }
+    }
+  }
+
+  &__image-container {
+    @include container;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image-main {
+    position: absolute;
+    inset: calc(50% - calc(292px * .5));
+    z-index: 1;
+  }
+
+  &__image-polygon-green {
+    position: absolute;
+    inset: calc(50% - 200px) calc(50% - 135px);
+    z-index: 2;
+  }
+
+  &__image-polygon-beige {
+    position: absolute;
+    inset: calc(50% - 55px) calc(50% - 235px);
+    z-index: 3;
+  }
+
+  &__image-polygon-blue {
+    position: absolute;
+    inset: calc(50% + 20px) calc(50% + 85px);
+    z-index: 4;
+  }
+}
