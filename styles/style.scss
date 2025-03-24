@@ -5,7 +5,8 @@ $mainBlueHighlightColor: #1998D5;
 $mainGreenColor: #9BCC37;
 $mainGreenHighlightColor: #77BA04;
 $whiteColor: #FFFFFF;
-$lightGrayColor: #fafafa;
+$lightestGrayColor: #fafafa;
+$lightGrayColor: #E9E9E9;
 $grayColor: #666666;
 
 $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
@@ -95,7 +96,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
   @include container;
   justify-content: center;
   flex-direction: column;
-  background-color: $lightGrayColor;
+  background-color: $lightestGrayColor;
 }
 
 .main__hello-section {
@@ -277,5 +278,55 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     position: absolute;
     inset: calc(50% + 20px) calc(50% + 85px);
     z-index: 4;
+  }
+}
+
+.main__values-section {
+  @include container-w1280;
+  background-color: $lightGrayColor;
+  height: 519px;
+  overflow: hidden;
+  overflow-x: auto;
+
+  &__container {
+    height: 100%;
+  }
+
+  &__title {
+    @include text-18px(36px, 300);
+    color: $mainBlueColor;
+    margin: 36px 0 0 10px;
+    position: absolute;
+  }
+
+  &__item-container {
+    @include container;
+    gap: 37px;
+    margin: 122px 0 0 10px;
+    align-items: start;
+  }
+
+  &__item-image img {
+    height: 200px;
+  }
+
+  &__item-text-container {
+    @include container;
+    flex-direction: column;
+  }
+
+  &__item-text-title {
+    @include text-18px(20px, 700);
+    text-decoration: underline;
+    color: $grayColor;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  &__item-text-text {
+    @include text-18px(14px);
+    color: $grayColor;
+    margin-top: 8px;
+    text-align: center;
   }
 }

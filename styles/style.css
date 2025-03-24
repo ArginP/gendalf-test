@@ -269,4 +269,63 @@
   z-index: 4;
 }
 
+.main__values-section {
+  display: flex;
+  align-items: center;
+  width: 1280px;
+  background-color: #E9E9E9;
+  height: 519px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.main__values-section__container {
+  height: 100%;
+}
+.main__values-section__title {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #00B7EC;
+  margin: 36px 0 0 10px;
+  position: absolute;
+}
+.main__values-section__item-container {
+  display: flex;
+  align-items: center;
+  gap: 37px;
+  margin: 122px 0 0 10px;
+  align-items: start;
+}
+.main__values-section__item-image img {
+  height: 200px;
+}
+.main__values-section__item-text-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main__values-section__item-text-title {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #666666;
+  line-height: 30px;
+  text-align: center;
+}
+.main__values-section__item-text-text {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  margin-top: 8px;
+  text-align: center;
+}
+
 /*# sourceMappingURL=style.css.map */
