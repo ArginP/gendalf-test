@@ -43,11 +43,13 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $mainBlueColor;
+  background: $lightestGrayColor;
   width: 100%;
 
   &__container {
     @include container-w1280;
+    background-color: $mainBlueColor;
+    height: 106px;
   }
 
   &__logo {
@@ -112,7 +114,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     flex-direction: column;
     height: 568px;
     width: 100%;
-    background-image: url(../assets/hello__background--desktop.png);
+    background-image: url(https://ik.imagekit.io/arginp/gendalf-test/assets/hello__background--desktop.png);
     background-color: rgba(0, 47, 61, 0.7);
     background-blend-mode: darken;
     background-size: cover;
