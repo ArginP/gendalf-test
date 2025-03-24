@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+$mainBlueColor: #00B7EC;
+$mainBlueHighlightColor: #1998D5;
+$mainGreenColor: #9BCC37;
+$mainGreenHighlightColor: #77BA04;
+
+$whiteColor: #FFFFFF;
+
+@mixin text-18px {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $mainBlueColor;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1280px;
+  }
+
+  &__logo {
+    margin: 10px 13px 0 9px;
+  }
+
+  &__navbar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
+
+  &__navbar__list {
+    display: flex;
+    gap: 39px;
+    list-style: none;
+    @include text-18px;
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: $whiteColor;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__button {
+    width: 255px;
+    height: 40px;
+    margin: auto 9px;
+    color: $mainBlueColor;
+    background-color: $whiteColor;
+    border: 1px solid $mainBlueColor;
+    border-radius: 5px;
+    cursor: pointer;
+    @include text-18px;
+  }
+}
