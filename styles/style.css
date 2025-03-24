@@ -352,19 +352,24 @@
   position: absolute;
   top: 55%;
   transform: translateY(-50%);
+  transform: scaleY(2);
   width: 40px;
   height: 40px;
-  background-color: #00B7EC;
-  opacity: 50%;
-  color: white;
+  background: transparent;
+  color: #00B7EC;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 36px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 36px;
+  font-weight: 300;
   border-radius: 5px;
   z-index: 10;
 }
 .main__values-section__prev-btn:hover, .main__values-section__next-btn:hover {
-  opacity: 80%;
+  color: #1998D5;
 }
 .main__values-section__prev-btn {
   left: 10px;
@@ -441,6 +446,152 @@
   z-index: 2;
   position: absolute;
   right: calc(50% + 165px);
+}
+
+.main__feed-section {
+  display: flex;
+  align-items: center;
+  width: 1280px;
+  background-color: #E9E9E9;
+  height: 566px;
+  position: relative;
+  overflow: hidden;
+}
+.main__feed-section__container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 21px auto 0;
+  gap: 28px;
+}
+.main__feed-section__title {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #00B7EC;
+  margin: 36px 0 0 10px;
+  position: absolute;
+}
+.main__feed-section__slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 100px);
+  margin-top: 73px;
+  position: relative;
+}
+.main__feed-section__item-container {
+  display: flex;
+  align-items: start;
+  width: max-content;
+  transition: transform 0.3s ease;
+  position: relative;
+  gap: 28px;
+}
+.main__feed-section__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  width: 273px;
+  height: 412px;
+  border: 2px solid;
+  rotation: 90deg;
+  border-image-source: linear-gradient(71.98deg, #FFFFFF -3.6%, rgba(255, 255, 255, 0.2) 108.71%);
+  border-image-outset: 100;
+  border-radius: 5px;
+  background: linear-gradient(173.67deg, rgba(255, 255, 255, 0.16) 55.33%, rgba(7, 168, 219, 0.16) 98.64%);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px 0 rgba(102, 102, 102, 0.7);
+  overflow: hidden;
+}
+.main__feed-section__item-image {
+  width: 100%;
+  height: 156px;
+}
+.main__feed-section__item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  z-index: 10;
+}
+.main__feed-section__item-text-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 224px;
+  height: calc(100% - 156px);
+}
+.main__feed-section__item-text-text {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  margin-top: 8px;
+  text-align: center;
+  line-height: 1.6rem;
+}
+.main__feed-section__item-btn {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 18px;
+  font-weight: 400;
+  height: 40px;
+  width: 224px;
+  background: transparent;
+  border: 1px solid #00B7EC;
+  border-radius: 5px;
+  color: #00B7EC;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.main__feed-section__item-btn:hover {
+  color: #1998D5;
+  border-color: #1998D5;
+}
+.main__feed-section__prev-btn, .main__feed-section__next-btn {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  transform: scaleY(2);
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: #00B7EC;
+  border: none;
+  cursor: pointer;
+  font-size: 36px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 36px;
+  font-weight: 300;
+  border-radius: 5px;
+  z-index: 10;
+}
+.main__feed-section__prev-btn:hover, .main__feed-section__next-btn:hover {
+  color: #1998D5;
+}
+.main__feed-section__prev-btn:disabled, .main__feed-section__next-btn:disabled {
+  color: #666666;
+}
+.main__feed-section__prev-btn {
+  left: 10px;
+}
+.main__feed-section__next-btn {
+  right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

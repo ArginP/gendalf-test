@@ -9,6 +9,7 @@ $lightestGrayColor: #fafafa;
 $lightGrayColor: #E9E9E9;
 $grayColor: #666666;
 
+$mainBlueSemitransparentColor: rgba(0, 183, 236, 0.05);
 $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 
 @mixin text {
@@ -358,25 +359,47 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     line-height: 1.2rem;
   }
 
-  &__prev-btn,
-  &__next-btn {
-    position: absolute;
-    top: 55%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: $mainBlueColor;
-    opacity: 50%;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 5px;
-    z-index: 10;
+  //&__prev-btn,
+  //&__next-btn {
+  //  position: absolute;
+  //  top: 55%;
+  //  transform: translateY(-50%);
+  //  width: 40px;
+  //  height: 40px;
+  //  background-color: $mainBlueColor;
+  //  opacity: 50%;
+  //  color: white;
+  //  border: none;
+  //  cursor: pointer;
+  //  font-size: 20px;
+  //  border-radius: 5px;
+  //  z-index: 10;
+  //
+  //  &:hover {
+  //    opacity: 80%;
+  //  }
 
-    &:hover {
-      opacity: 80%;
-    }
+    &__prev-btn,
+    &__next-btn {
+      position: absolute;
+      top: 55%;
+      transform: translateY(-50%); // чтобы стрелочка была в центре элемента кнопки
+      transform: scaleY(2);
+      width: 40px;
+      height: 40px;
+      //background: $mainBlueSemitransparentColor;
+      background: transparent;
+      color: $mainBlueColor;
+      border: none;
+      cursor: pointer;
+      font-size: 36px;
+      @include text-18px(36px, 300);
+      border-radius: 5px;
+      z-index: 10;
+
+      &:hover {
+        color: $mainBlueHighlightColor;
+      }
   }
 
   &__prev-btn {
@@ -452,5 +475,150 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     z-index: 2;
     position: absolute;
     right: calc(50% + 165px);
+  }
+}
+
+// --- Feed ---
+.main__feed-section {
+  @include container-w1280;
+  background-color: $lightGrayColor;
+  height: 566px;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 21px auto 0;
+    gap: 28px;
+  }
+
+  &__title {
+    @include text-18px(36px, 300);
+    color: $mainBlueColor;
+    margin: 36px 0 0 10px;
+    position: absolute;
+  }
+
+  &__slider-wrapper {
+    @include container;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 73px;
+    position: relative;
+
+  }
+
+  &__item-container {
+    display: flex;
+    align-items: start;
+    width: max-content;
+    transition: transform 0.3s ease;
+    position: relative;
+    gap: 28px;
+  }
+
+  &__item {
+    @include container;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    width: 273px;
+    height: 412px;
+    border: 2px solid;
+    rotation: 90deg;
+    border-image-source: linear-gradient(calc(161.98deg - 90deg), #FFFFFF -3.6%, rgba(255, 255, 255, 0.2) 108.71%);
+    border-image-outset: 100; // для корректной обрезки градиентного фона border-image
+    border-radius: 5px;
+    background: linear-gradient(calc(83.67deg + 90deg), rgba(255, 255, 255, 0.16) 55.33%, rgba(7, 168, 219, 0.16) 98.64%);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 6px 0 rgba(102, 102, 102, 0.7);
+    overflow: hidden;
+  }
+
+  &__item-image {
+    width: 100%;
+    height: 156px;
+  }
+
+  &__item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Обрезает изображение, сохраняя пропорции
+    border-top-left-radius: 5px; // Закругляет верхние углы изображения
+    border-top-right-radius: 5px;
+    z-index: 10;
+  }
+
+  &__item-text-container {
+    @include container;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 224px;
+    height: calc(100% - 156px); // с учетом высоты изображения 156px
+  }
+
+  &__item-text-text {
+    @include text-18px;
+    color: $grayColor;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 1.6rem;
+  }
+
+  &__item-btn {
+    @include text-18px;
+    height: 40px;
+    width: 224px;
+    background: transparent;
+    border: 1px solid $mainBlueColor;
+    border-radius: 5px;
+    color: $mainBlueColor;
+    cursor: pointer;
+    margin-bottom: 25px;
+
+    &:hover {
+      color: $mainBlueHighlightColor;
+      border-color: $mainBlueHighlightColor;
+    }
+  }
+
+  &__prev-btn,
+  &__next-btn {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%); // чтобы стрелочка была в центре элемента кнопки
+    transform: scaleY(2);
+    width: 40px;
+    height: 40px;
+    //background: $mainBlueSemitransparentColor;
+    background: transparent;
+    color: $mainBlueColor;
+    border: none;
+    cursor: pointer;
+    font-size: 36px;
+    @include text-18px(36px, 300);
+    border-radius: 5px;
+    z-index: 10;
+
+    &:hover {
+      color: $mainBlueHighlightColor;
+    }
+
+    &:disabled {
+      color: $grayColor;
+    }
+  }
+
+  &__prev-btn {
+    left: 10px;
+  }
+
+  &__next-btn {
+    right: 10px;
   }
 }
