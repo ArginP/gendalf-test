@@ -184,7 +184,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     &__button--secondary {
       width: 327px;
       background-color: $whiteColor;
-      border: none;
+      border: 2px solid $mainGreenColor;
       border-radius: 5px;
       color: $mainGreenColor;
       @include text-18px(18px, 700);
@@ -192,6 +192,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 
       &:hover {
         color: $mainGreenHighlightColor;
+        border: 2px solid $mainGreenHighlightColor;
       }
     }
   }
@@ -759,6 +760,179 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     & img {
       height: 320px;
       width: 378px;
+    }
+  }
+}
+
+.main__contact-section {
+  @include container-w1280;
+  justify-content: center;
+  height: 840px;
+  background-image: url(https://ik.imagekit.io/arginp/gendalf-test/assets/contact__background--desktop.png?updatedAt=1742900158028);
+  background-color: rgba(0, 47, 61, 0.7);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    @include container;
+    height: 718px;
+    width: 840px;
+    background-color: #00B7ECE7;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__form-title {
+    @include text-18px(36px, 300);
+    color: $whiteColor;
+    height: 49px;
+  }
+
+  &__form {
+    @include container;
+    justify-content: center;
+  }
+
+  &__form-fields-container {
+    @include container;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 18px;
+  }
+
+  &__form-fields_text-input,
+  &__form-fields_text-input-long {
+    box-sizing: border-box;
+    height: 50px;
+    width: 568px;
+    padding: 14px 16px 11px 16px;
+    border-radius: 5px;
+    border: 2px solid #666666B5;
+
+    &:focus {
+      border: 2px solid $grayColor;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $grayColor;
+      @include text-18px(18px, 300);
+      opacity: .5;
+    }
+
+    &--error {
+      border: 2px solid #FD7583;
+    }
+
+    &--clear {
+      border: 2px solid #9BCC37;
+    }
+  }
+
+  &__form-fields_text-input-long {
+    height: 108px;
+    margin-top: 17px;
+  }
+
+  &__form-fieldset {
+    @include container;
+    @include text-18px;
+    flex-direction: column;
+    gap: 7px;
+    align-items: start;
+    width: 100%;
+    color: $whiteColor;
+
+    & input[type=radio] {
+      display: none;
+    }
+
+    & input[type=radio]:checked + label:before {
+      background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center,
+      url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="5" fill="white"/></svg>') no-repeat center;
+      image-rendering: high-quality;
+    }
+  }
+
+  &__form-fieldset_legend {
+    font-weight: 700;
+    height: 25px;
+    margin-top: 17px;
+    margin-bottom: 10px;
+  }
+
+  &__form-fieldset__radio-item {
+    height: 25px;
+  }
+
+  &__form-fieldset_radio-label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center;
+      image-rendering: high-quality;
+    }
+  }
+
+  &__form__button-group {
+    @include container;
+    justify-content: space-between;
+    width: 565px;
+    height: 50px;
+    @include margin-top(17px);
+    align-items: flex-start;
+
+    button {
+      height: 100%;
+    }
+  }
+
+  &__form__button-group--upload {
+    width: 270px;
+    background-color: $whiteColor;
+    border: 2px solid $mainGreenColor;
+    border-radius: 5px;
+    color: $mainGreenColor;
+    @include text-18px(18px, 700);
+    cursor: pointer;
+
+    // выравнивание svg изображения
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover {
+      color: $mainGreenHighlightColor;
+      border: 2px solid $mainGreenHighlightColor;
+    }
+  }
+
+  &__form__button-group--submit {
+    width: 218px;
+    background-color: $mainGreenColor;
+    border: none;
+    border-radius: 5px;
+    color: $whiteColor;
+    @include text-18px(18px, 700);
+    cursor: pointer;
+
+    &:hover {
+      background-color: $mainGreenHighlightColor;
     }
   }
 }
