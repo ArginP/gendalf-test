@@ -1,4 +1,19 @@
-// --- Логика работы прокрутки слайдера ---
+// --- Управление активности кнопок прокрутки слайдера "Живая лента" ---
+window.addEventListener("resize", () => {
+    const viewWidth = window.innerWidth;
+    const feedSliderPrevBtn = document.querySelector('#feedSliderPrevBtn');
+    const feedSliderNextBtn = document.querySelector('#feedSliderNextBtn');
+
+    if (viewWidth < 1280) {
+        feedSliderPrevBtn.disabled = false;
+        feedSliderNextBtn.disabled = false;
+    } else {
+        feedSliderPrevBtn.disabled = true;
+        feedSliderNextBtn.disabled = true;
+    }
+});
+
+// --- Логика работы прокрутки слайдера "Наши ценности" ---
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('#valuesSliderWrapper');
     const slider = document.querySelector('#valuesSliderItemContainer');
@@ -25,6 +40,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     prevBtn.addEventListener('click', () => {
+        if (currentPosition < 0) {
+            currentPosition += itemWidth;
+            // Убеждаемся, что не уходим левее начальной позиции
+            currentPosition = Math.min(currentPosition, newMaxScroll);
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        }
+    });
+});
+
+// --- Логика работы прокрутки слайдера "Живая лента" ---
+document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('#feedSliderWrapper');
+    const slider = document.querySelector('#feedSliderItemContainer');
+    const feedSliderPrevBtn = document.querySelector('#feedSliderPrevBtn');
+    const feedSliderNextBtn = document.querySelector('#feedSliderNextBtn');
+
+    let currentPosition = 0;
+    const itemWidth = slider.querySelector('.main__feed-section__item').offsetWidth + 75; // Ширина элемента + gap
+    const visibleWidth = wrapper.offsetWidth; // Ширина видимой области
+    const totalWidth = slider.scrollWidth; // Полная ширина всех элементов
+
+// Максимальный сдвиг вправо: когда правый край слайдера достигает правого края врапера
+    const maxScroll = -(totalWidth - visibleWidth + 100); // Текущий максимум (весь контент уходит влево)
+    const newMaxScroll = 0; // Правый край контента не уходит левее правой границы wrapper
+
+    feedSliderNextBtn.addEventListener('click', () => {
+        // Ограничиваем сдвиг так, чтобы правый край не уходил дальше видимой области
+        if (currentPosition > maxScroll) {
+            currentPosition -= itemWidth;
+            // Убеждаемся, что не превышаем максимальный сдвиг
+            currentPosition = Math.max(currentPosition, maxScroll);
+            slider.style.transform = `translateX(${currentPosition}px)`;
+        }
+    });
+
+    feedSliderPrevBtn.addEventListener('click', () => {
         if (currentPosition < 0) {
             currentPosition += itemWidth;
             // Убеждаемся, что не уходим левее начальной позиции

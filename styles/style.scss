@@ -642,6 +642,11 @@ main {
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 1280px) {
+    width: 380px;
+    height: 542px;
+  }
+
   &__container {
     height: 100%;
     position: relative;
@@ -649,6 +654,10 @@ main {
     max-width: 1280px;
     margin: 21px auto 0;
     gap: 28px;
+
+    @media (max-width: 1280px) {
+      margin: 0;
+    }
   }
 
   &__title {
@@ -656,6 +665,12 @@ main {
     color: $mainBlueColor;
     margin: 36px 0 0 10px;
     position: absolute;
+
+    @media (max-width: 1280px) {
+      @include text-18px(28px);
+      margin: 32px auto 0;
+      right: calc(50% - calc(175px * .5));
+    }
   }
 
   &__slider-wrapper {
@@ -667,6 +682,10 @@ main {
     margin-top: 73px;
     position: relative;
 
+    @media (max-width: 1280px) {
+      justify-content: start;
+      margin-left: 50px;
+    }
   }
 
   &__item-container {
@@ -676,6 +695,10 @@ main {
     transition: transform 0.3s ease;
     position: relative;
     gap: 28px;
+
+    @media (max-width: 1280px) {
+      gap: 75px;
+    }
   }
 
   &__item {
