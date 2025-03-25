@@ -879,6 +879,10 @@ main {
   height: max-content;
   position: relative;
 
+  @media (max-width: 1280px) {
+    width: 380px;
+  }
+
   &__container {
     display: flex;
     height: 100%;
@@ -892,11 +896,21 @@ main {
     color: $secondaryBlueColor;
     margin-left: 13px;
     margin-top: 60px;
+
+    @media (max-width: 1280px) {
+      margin-left: 23px;
+      margin-top: 34px;
+    }
   }
 
   &__text-items {
     margin-left: 13px;
     margin-top: 46px;
+
+    @media (max-width: 1280px) {
+      margin-left: 13px;
+      margin-top: 21px;
+    }
   }
 
   &__item { // details
@@ -907,6 +921,10 @@ main {
     margin-left: 18px;
     line-height: 1.6rem;
     position: relative;
+
+    @media (max-width: 1280px) {
+      margin-left: 0;
+    }
 
     & b {
       font-weight: 700;
@@ -941,8 +959,12 @@ main {
       content: url("https://ik.imagekit.io/arginp/gendalf-test/assets/marker--closed.png?tr=w-23,h-23");
       position: absolute;
       left: 0;
-      top: 60%; // центрирует по вертикали
-      transform: translateY(-50%);
+      top: 60%;
+      transform: translateY(-50%); // центрирует по вертикали
+
+      @media (max-width: 1280px) {
+        transform: translateY(-100%);
+      }
     }
   }
 
@@ -958,6 +980,10 @@ main {
   &__img-container {
     position: relative;
     margin: 35px 29px auto 43px;
+
+    @media (max-width: 1280px) {
+      display: none;
+    }
 
     & img {
       height: 320px;
