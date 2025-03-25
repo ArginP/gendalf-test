@@ -44,7 +44,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 .visually-hidden {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%); /* browsers in the future */
+  clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -64,6 +64,24 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     @include container-w1280;
     background-color: $mainBlueColor;
     height: 106px;
+
+    @media (max-width: 1280px) {
+      width: 380px;
+      //display: none;
+      //visibility: hidden;
+    }
+
+    //&:after {
+    //  @media (max-width: 1280px) {
+    //    visibility: visible;
+    //    content: 'whatever it is you want to add';
+    //    display: block;
+    //    height: 101px;
+    //    background-color: $whiteColor;
+    //    justify-content: center;
+    //    align-items: center;
+    //  }
+    //}
   }
 
   &__logo {
@@ -111,17 +129,32 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 }
 
 // --- Main ---
+main {
+  @include container;
+  justify-content: center;
+}
+
 .main__container {
   @include container;
   justify-content: center;
   flex-direction: column;
   background-color: $lightestGrayColor;
+
+
+  @media (max-width: 1280px) {
+    width: 380px;
+  }
 }
 
 
 // --- Hello ---
 .main__hello-section {
   @include container-w1280;
+
+  @media (max-width: 1280px) {
+    width: 380px;
+    //height: 388px;
+  }
 
   &__container {
     @include container;
@@ -133,6 +166,11 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 1280px) {
+      background-image: url(https://ik.imagekit.io/arginp/gendalf-test/assets/hello__background--mobile.png?updatedAt=1742927173576);
+      height: 388px;
+    }
   }
 
   &__title {
@@ -144,6 +182,14 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     color: $whiteColor;
     line-height: 5.437rem;
     @include margin-top(64px);
+
+    @media (max-width: 1280px) {
+      width: 353px;
+      height: 62px;
+      @include text-18px(24px, 700);
+      line-height: 2.3rem;
+      @include margin-top(31px);
+    }
   }
 
   &__text {
@@ -154,6 +200,13 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     @include margin-top(20px);
     text-shadow: 0 4px 4px 0 #00000080;
     line-height: 2.125rem;
+
+    @media (max-width: 1280px) {
+      height: 88px;
+      width: 355px;
+      @include text-18px(16px);
+      line-height: 1.5rem;
+    }
   }
 
   &__button-group {
@@ -164,8 +217,19 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     @include margin-top(43px);
     align-items: flex-start;
 
+    @media (max-width: 1280px) {
+      flex-direction: column;
+      height: 110px;
+      align-items: center;
+      width: 296px;
+    }
+
     button {
       height: 50px;
+
+      @media (max-width: 1280px) {
+        width: 100%;
+      }
     }
 
     &__button--primary {

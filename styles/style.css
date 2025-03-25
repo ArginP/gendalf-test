@@ -2,7 +2,7 @@
 .visually-hidden {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%); /* browsers in the future */
+  clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -23,6 +23,11 @@
   width: 1280px;
   background-color: #00B7EC;
   height: 106px;
+}
+@media (max-width: 1280px) {
+  .header__container {
+    width: 380px;
+  }
 }
 .header__logo {
   margin: 10px 13px 0 9px;
@@ -69,6 +74,12 @@
   color: #1998D5;
 }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .main__container {
   display: flex;
   align-items: center;
@@ -76,11 +87,21 @@
   flex-direction: column;
   background-color: #fafafa;
 }
+@media (max-width: 1280px) {
+  .main__container {
+    width: 380px;
+  }
+}
 
 .main__hello-section {
   display: flex;
   align-items: center;
   width: 1280px;
+}
+@media (max-width: 1280px) {
+  .main__hello-section {
+    width: 380px;
+  }
 }
 .main__hello-section__container {
   display: flex;
@@ -93,6 +114,12 @@
   background-blend-mode: darken;
   background-size: cover;
   background-position: center;
+}
+@media (max-width: 1280px) {
+  .main__hello-section__container {
+    background-image: url(https://ik.imagekit.io/arginp/gendalf-test/assets/hello__background--mobile.png?updatedAt=1742927173576);
+    height: 388px;
+  }
 }
 .main__hello-section__title {
   display: flex;
@@ -109,6 +136,19 @@
   line-height: 5.437rem;
   margin: 64px auto 0 auto;
 }
+@media (max-width: 1280px) {
+  .main__hello-section__title {
+    width: 353px;
+    height: 62px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 100%;
+    letter-spacing: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 2.3rem;
+    margin: 31px auto 0 auto;
+  }
+}
 .main__hello-section__text {
   display: flex;
   align-items: center;
@@ -124,6 +164,18 @@
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5019607843);
   line-height: 2.125rem;
 }
+@media (max-width: 1280px) {
+  .main__hello-section__text {
+    height: 88px;
+    width: 355px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 100%;
+    letter-spacing: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+}
 .main__hello-section__button-group {
   display: flex;
   align-items: center;
@@ -133,8 +185,21 @@
   margin: 43px auto 0 auto;
   align-items: flex-start;
 }
+@media (max-width: 1280px) {
+  .main__hello-section__button-group {
+    flex-direction: column;
+    height: 110px;
+    align-items: center;
+    width: 296px;
+  }
+}
 .main__hello-section__button-group button {
   height: 50px;
+}
+@media (max-width: 1280px) {
+  .main__hello-section__button-group button {
+    width: 100%;
+  }
 }
 .main__hello-section__button-group__button--primary {
   width: 175px;
