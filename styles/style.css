@@ -836,6 +836,11 @@ main {
   align-items: center;
   width: 1280px;
 }
+@media (max-width: 1280px) {
+  .main__student-section {
+    width: 380px;
+  }
+}
 .main__student-section__container {
   display: flex;
   align-items: center;
@@ -847,6 +852,12 @@ main {
   background-blend-mode: darken;
   background-size: cover;
   background-position: center;
+}
+@media (max-width: 1280px) {
+  .main__student-section__container {
+    height: 248px;
+    background-position: 83%;
+  }
 }
 .main__student-section__title {
   display: flex;
@@ -863,6 +874,18 @@ main {
   line-height: 3.06rem;
   margin: 83px auto 0 auto;
 }
+@media (max-width: 1280px) {
+  .main__student-section__title {
+    font-family: "Open Sans", sans-serif;
+    line-height: 100%;
+    letter-spacing: 0;
+    font-size: 28px;
+    font-weight: 300;
+    width: 278px;
+    margin-top: 44px;
+    line-height: 2.5rem;
+  }
+}
 .main__student-section__button--primary {
   height: 50px;
   width: 289px;
@@ -877,6 +900,11 @@ main {
   font-weight: 700;
   cursor: pointer;
   margin: 56px auto 0 auto;
+}
+@media (max-width: 1280px) {
+  .main__student-section__button--primary {
+    margin-top: 27px;
+  }
 }
 .main__student-section__button--primary:hover {
   background-color: #77BA04;
