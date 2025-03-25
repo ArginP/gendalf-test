@@ -1,16 +1,38 @@
-// --- Управление активности кнопок прокрутки слайдера "Живая лента" ---
-window.addEventListener("resize", () => {
+// --- Управление активности кнопок прокрутки слайдера "Живая лента" и содержимым FAQ ---
+const resizeActions = () => {
     const viewWidth = window.innerWidth;
     const feedSliderPrevBtn = document.querySelector('#feedSliderPrevBtn');
     const feedSliderNextBtn = document.querySelector('#feedSliderNextBtn');
 
+    const item1 = document.querySelector('#item1');
+    const item2 = document.querySelector('#item2');
+    const item3 = document.querySelector('#item3');
+    const item4 = document.querySelector('#item4');
+
+    console.log(item1.children[0].textContent);
+
     if (viewWidth < 1280) {
         feedSliderPrevBtn.disabled = false;
         feedSliderNextBtn.disabled = false;
+        item2.children[0].textContent = 'Есть ли какие-то возрастные ограничения при приеме на работу?';
+        item3.children[0].textContent = 'Объяснят ли сотрудники почему отказано в приеме на работу?';
+        item4.children[0].textContent = 'Сколько собеседований предстоит пройти перед приемом на работу?';
     } else {
         feedSliderPrevBtn.disabled = true;
         feedSliderNextBtn.disabled = true;
+        item2.children[0].textContent = 'Как правильно составить резюме?';
+        item3.children[0].textContent = 'Возможно ли устроиться без опыта?';
+        item4.children[0].textContent = 'Ошибки на собеседовании. Чего нужно избегать?';
     }
+}
+
+// --- Два независимых отслеживания для стабильного отображения ---
+document.addEventListener('DOMContentLoaded', () => {
+    resizeActions();
+});
+
+window.addEventListener("resize", () => {
+    resizeActions();
 });
 
 // --- Логика работы прокрутки слайдера "Наши ценности" ---
