@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 .visually-hidden {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -792,19 +793,43 @@
   gap: 3px;
   margin-top: 18px;
 }
-.main__contact-section__form-fields_text-input, .main__contact-section__form-fields_text-input-long {
+.main__contact-section__form-field-wrapper {
+  position: relative;
+  width: 568px;
+}
+.main__contact-section__form-field-wrapper--error::after {
+  content: "×";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FD7583;
+  font-size: 20px;
+  font-weight: bold;
+}
+.main__contact-section__form-field-wrapper--clear::after {
+  content: "✓";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9BCC37;
+  font-size: 20px;
+  font-weight: bold;
+}
+.main__contact-section__form-fields_text-input {
   box-sizing: border-box;
   height: 50px;
-  width: 568px;
+  width: 100%;
   padding: 14px 16px 11px 16px;
   border-radius: 5px;
   border: 2px solid rgba(102, 102, 102, 0.7098039216);
 }
-.main__contact-section__form-fields_text-input:focus, .main__contact-section__form-fields_text-input-long:focus {
+.main__contact-section__form-fields_text-input:focus {
   border: 2px solid #666666;
   outline: none;
 }
-.main__contact-section__form-fields_text-input::placeholder, .main__contact-section__form-fields_text-input-long::placeholder {
+.main__contact-section__form-fields_text-input::placeholder {
   color: #666666;
   font-family: "Open Sans", sans-serif;
   line-height: 100%;
@@ -813,15 +838,16 @@
   font-weight: 300;
   opacity: 0.5;
 }
-.main__contact-section__form-fields_text-input--error, .main__contact-section__form-fields_text-input-long--error {
+.main__contact-section__form-fields_text-input--error {
   border: 2px solid #FD7583;
 }
-.main__contact-section__form-fields_text-input--clear, .main__contact-section__form-fields_text-input-long--clear {
+.main__contact-section__form-fields_text-input--clear {
   border: 2px solid #9BCC37;
 }
 .main__contact-section__form-fields_text-input-long {
   height: 108px;
   margin-top: 17px;
+  resize: none;
 }
 .main__contact-section__form-fieldset {
   display: flex;
@@ -841,19 +867,19 @@
   display: none;
 }
 .main__contact-section__form-fieldset input[type=radio]:checked + label:before {
-  background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center, url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="5" fill="white"/></svg>') no-repeat center;
+  background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center, url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="5" fill="white"/></svg>') no-repeat center;
   image-rendering: high-quality;
 }
-.main__contact-section__form-fieldset_legend {
+.main__contact-section__form-fieldset__form-fieldset_legend {
   font-weight: 700;
   height: 25px;
   margin-top: 17px;
   margin-bottom: 10px;
 }
-.main__contact-section__form-fieldset__radio-item {
+.main__contact-section__form-fieldset__form-fieldset__radio-item {
   height: 25px;
 }
-.main__contact-section__form-fieldset_radio-label {
+.main__contact-section__form-fieldset__form-fieldset_radio-label {
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -862,7 +888,7 @@
   line-height: 18px;
   user-select: none;
 }
-.main__contact-section__form-fieldset_radio-label::before {
+.main__contact-section__form-fieldset__form-fieldset_radio-label::before {
   content: "";
   display: inline-block;
   width: 16px;
@@ -870,14 +896,14 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center;
+  background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center;
   image-rendering: high-quality;
 }
 .main__contact-section__form__button-group {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 565px;
+  width: 568px;
   height: 50px;
   margin: 17px auto 0 auto;
   align-items: flex-start;

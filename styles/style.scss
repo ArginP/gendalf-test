@@ -9,6 +9,7 @@ $whiteColor: #FFFFFF;
 $lightestGrayColor: #fafafa;
 $lightGrayColor: #E9E9E9;
 $grayColor: #666666;
+$redColor: #FD7583;
 
 $mainBlueSemitransparentColor: rgba(0, 183, 236, 0.05);
 $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
@@ -801,11 +802,37 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     margin-top: 18px;
   }
 
-  &__form-fields_text-input,
-  &__form-fields_text-input-long {
+  &__form-field-wrapper {
+    position: relative; // Для позиционирования ::after
+    width: 568px;
+
+    &--error::after {
+      content: "×"; // Символ крестика
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $redColor;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &--clear::after {
+      content: "✓"; // Символ успеха
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $mainGreenColor;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  &__form-fields_text-input {
     box-sizing: border-box;
     height: 50px;
-    width: 568px;
+    width: 100%;
     padding: 14px 16px 11px 16px;
     border-radius: 5px;
     border: 2px solid #666666B5;
@@ -818,21 +845,22 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     &::placeholder {
       color: $grayColor;
       @include text-18px(18px, 300);
-      opacity: .5;
+      opacity: 0.5;
     }
 
     &--error {
-      border: 2px solid #FD7583;
+      border: 2px solid $redColor;
     }
 
     &--clear {
-      border: 2px solid #9BCC37;
+      border: 2px solid $mainGreenColor;
     }
   }
 
   &__form-fields_text-input-long {
     height: 108px;
     margin-top: 17px;
+    resize: none;
   }
 
   &__form-fieldset {
@@ -849,49 +877,49 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     }
 
     & input[type=radio]:checked + label:before {
-      background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center,
+      background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center,
       url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="5" fill="white"/></svg>') no-repeat center;
       image-rendering: high-quality;
     }
-  }
 
-  &__form-fieldset_legend {
-    font-weight: 700;
-    height: 25px;
-    margin-top: 17px;
-    margin-bottom: 10px;
-  }
+    &__form-fieldset_legend {
+      font-weight: 700;
+      height: 25px;
+      margin-top: 17px;
+      margin-bottom: 10px;
+    }
 
-  &__form-fieldset__radio-item {
-    height: 25px;
-  }
+    &__form-fieldset__radio-item {
+      height: 25px;
+    }
 
-  &__form-fieldset_radio-label {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    padding-left: 25px;
-    margin-right: 0;
-    line-height: 18px;
-    user-select: none;
-
-    &::before {
-      content: "";
+    &__form-fieldset_radio-label {
       display: inline-block;
-      width: 16px;
-      height: 16px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center;
-      image-rendering: high-quality;
+      cursor: pointer;
+      position: relative;
+      padding-left: 25px;
+      margin-right: 0;
+      line-height: 18px;
+      user-select: none;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;charset=UTF-8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7.5" stroke="white"/></svg>') no-repeat center;
+        image-rendering: high-quality;
+      }
     }
   }
 
   &__form__button-group {
     @include container;
     justify-content: space-between;
-    width: 565px;
+    width: 568px;
     height: 50px;
     @include margin-top(17px);
     align-items: flex-start;
@@ -899,40 +927,38 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     button {
       height: 100%;
     }
-  }
 
-  &__form__button-group--upload {
-    width: 270px;
-    background-color: $whiteColor;
-    border: 2px solid $mainGreenColor;
-    border-radius: 5px;
-    color: $mainGreenColor;
-    @include text-18px(18px, 700);
-    cursor: pointer;
+    &--upload {
+      width: 270px;
+      background-color: $whiteColor;
+      border: 2px solid $mainGreenColor;
+      border-radius: 5px;
+      color: $mainGreenColor;
+      @include text-18px(18px, 700);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
 
-    // выравнивание svg изображения
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    &:hover {
-      color: $mainGreenHighlightColor;
-      border: 2px solid $mainGreenHighlightColor;
+      &:hover {
+        color: $mainGreenHighlightColor;
+        border: 2px solid $mainGreenHighlightColor;
+      }
     }
-  }
 
-  &__form__button-group--submit {
-    width: 218px;
-    background-color: $mainGreenColor;
-    border: none;
-    border-radius: 5px;
-    color: $whiteColor;
-    @include text-18px(18px, 700);
-    cursor: pointer;
+    &--submit {
+      width: 218px;
+      background-color: $mainGreenColor;
+      border: none;
+      border-radius: 5px;
+      color: $whiteColor;
+      @include text-18px(18px, 700);
+      cursor: pointer;
 
-    &:hover {
-      background-color: $mainGreenHighlightColor;
+      &:hover {
+        background-color: $mainGreenHighlightColor;
+      }
     }
   }
 }

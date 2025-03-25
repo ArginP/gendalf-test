@@ -341,43 +341,39 @@
                 <div class="main__contact-section__form-container">
                     <div class="main__contact-section__form-title">Записаться на собеседование</div>
 
-                    <form class="main__contact-section__form" method="post">
+                    <form class="main__contact-section__form" id="contactForm" method="post">
                         <div class="main__contact-section__form-fields-container">
                             <label class="visually-hidden" for="nameInput">Введите имя:</label>
-                            <input class="main__contact-section__form-fields_text-input" id="nameInput" type="text"
-                                   placeholder="Как к вам обращаться?" pattern="^[a-zA-Zа-яА-ЯЁё \-]+$"
-                                   data-error-message="Разрешены символы латиницы, кириллицы, знаки дефиса и пробелы."
-                                   aria-describedby="name-error" required>
-                            <span class="main__contact-section__form__error main__contact-section__input__name-error"
-                                  id="name-error" aria-live="polite"></span>
+                            <div class="main__contact-section__form-field-wrapper">
+                                <input class="main__contact-section__form-fields_text-input" id="nameInput" name="name" type="text"
+                                       placeholder="Как к вам обращаться?" pattern="^[a-zA-Zа-яА-ЯЁё \-]+$"
+                                       data-error-message="×" required>
+                            </div>
 
-                            <label class="visually-hidden" for="phoneInput">Введите номер телефона:</label>
-                            <input class="main__contact-section__form-fields_text-input" id="phoneInput" type="text"
-                                   placeholder="Телефон" pattern="\+?[0-9\s\-\(\)]+"
-                                   aria-describedby="phone-error" required>
-                            <span class="main__contact-section__form__error main__contact-section__input__phone-error"
-                                  id="phone-error" aria-live="polite"></span>
+                            <div class="main__contact-section__form-field-wrapper">
+                                <label class="visually-hidden" for="phoneInput">Введите номер телефона:</label>
+                                <input class="main__contact-section__form-fields_text-input" id="phoneInput" name="phone" type="text"
+                                       placeholder="Телефон" pattern="\+?[0-9\s\-\(\)]+" required>
+                            </div>
 
-                            <label class="visually-hidden" for="emailInput">Введите адрес электронной почты:</label>
-                            <input class="main__contact-section__form-fields_text-input" id="emailInput" type="text"
-                                   placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                   aria-describedby="email-error" required>
-                            <span class="main__contact-section__form__error main__contact-section__input__email-error"
-                                  id="email-error" aria-live="polite"></span>
+                            <div class="main__contact-section__form-field-wrapper">
+                                <label class="visually-hidden" for="emailInput">Введите адрес электронной почты:</label>
+                                <input class="main__contact-section__form-fields_text-input" id="emailInput" name="email" type="text"
+                                       placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                            </div>
 
-                            <label class="visually-hidden" for="vacancyInput">Введите желаемую должность:</label>
-                            <input class="main__contact-section__form-fields_text-input" id="vacancyInput" type="text"
-                                   placeholder="Желаемая должность" pattern="^[a-zA-Zа-яА-ЯЁё \-]+$"
-                                   data-error-message="Разрешены символы латиницы, кириллицы, знаки дефиса и пробелы."
-                                   aria-describedby="vacancy-error" required>
-                            <span class="main__contact-section__form__error main__contact-section__input__vacancy-error"
-                                  id="vacancy-error" aria-live="polite"></span>
+                            <div class="main__contact-section__form-field-wrapper">
+                                <label class="visually-hidden" for="vacancyInput">Введите желаемую должность:</label>
+                                <input class="main__contact-section__form-fields_text-input" id="vacancyInput"
+                                       name="vacancy" type="text"
+                                       placeholder="Желаемая должность" pattern="^[a-zA-Zа-яА-ЯЁё \-]+$"
+                                       data-error-message="×" required>
+                            </div>
 
                             <fieldset class="main__contact-section__form-fieldset">
                                 <legend class="main__contact-section__form-fieldset_legend">
                                     Выберите категорию занятости
                                 </legend>
-
                                 <div class="main__contact-section__form-fieldset__radio-item">
                                     <input type="radio" name="work-from" id="workFromOffice" checked>
                                     <label for="workFromOffice"
@@ -394,17 +390,16 @@
                                 </div>
                                 <div class="main__contact-section__form-fieldset__radio-item">
                                     <input type="radio" name="work-from" id="workFromHome">
-                                    <label for="workFromHome"
-                                           class="main__contact-section__form-fieldset_radio-label">
+                                    <label for="workFromHome" class="main__contact-section__form-fieldset_radio-label">
                                         Удаленная работа
                                     </label>
                                 </div>
                             </fieldset>
 
                             <label class="visually-hidden" for="questionsInput">Задайте свои вопросы:</label>
-                            <textarea class="main__contact-section__form-fields_text-input-long" id="questionsInput"
-                                   rows="5"
-                                   placeholder="Ваши вопросы"></textarea>
+                            <textarea
+                                    class="main__contact-section__form-fields_text-input main__contact-section__form-fields_text-input-long"
+                                    id="questionsInput" name="questions" rows="5" placeholder="Ваши вопросы"></textarea>
 
                             <div class="main__contact-section__form__button-group">
                                 <button type="button" class="main__contact-section__form__button-group--upload">
@@ -415,8 +410,8 @@
                                               fill="#9BCC37"/>
                                     </svg>
                                 </button>
-
-                                <button type="submit" class="main__contact-section__form__button-group--submit">
+                                <button type="submit" class="main__contact-section__form__button-group--submit"
+                                        id="contactFormSubmitBtn">
                                     Записаться
                                 </button>
                             </div>
