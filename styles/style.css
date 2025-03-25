@@ -651,4 +651,91 @@
   color: #77BA04;
 }
 
+.main__faq-section {
+  display: flex;
+  align-items: center;
+  width: 1280px;
+  background: linear-gradient(163.35deg, rgba(40, 228, 115, 0.16) 11.27%, rgba(70, 205, 22, 0.14) 35.82%, rgba(39, 221, 209, 0.39) 57.4%, rgba(5, 176, 213, 0.32) 82.7%);
+  backdrop-filter: blur(7px);
+  height: max-content;
+  position: relative;
+}
+.main__faq-section__container {
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+}
+.main__faq-section__title {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #14AFE8;
+  margin-left: 13px;
+  margin-top: 60px;
+}
+.main__faq-section__text-items {
+  margin-left: 13px;
+  margin-top: 46px;
+}
+.main__faq-section__item {
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  padding-bottom: 30px;
+  padding-left: 28px;
+  margin-left: 18px;
+  line-height: 1.6rem;
+  position: relative;
+}
+.main__faq-section__item b {
+  font-weight: 700;
+}
+.main__faq-section__item:open > summary {
+  color: #00B7EC;
+}
+.main__faq-section__item:open > summary::before {
+  content: url("https://ik.imagekit.io/arginp/gendalf-test/assets/marker--open.png?tr=w-23,h-23");
+}
+.main__faq-section__item-summary {
+  text-decoration: underline;
+  margin-bottom: 8px;
+  cursor: pointer;
+  list-style: none;
+  padding-left: 28px;
+  margin-left: -28px;
+  position: relative;
+}
+.main__faq-section__item-summary::-webkit-details-marker {
+  display: none;
+}
+.main__faq-section__item-summary::before {
+  content: url("https://ik.imagekit.io/arginp/gendalf-test/assets/marker--closed.png?tr=w-23,h-23");
+  position: absolute;
+  left: 0;
+  top: 60%;
+  transform: translateY(-50%);
+}
+.main__faq-section__item__list {
+  list-style: outside;
+  margin-left: 18px;
+}
+.main__faq-section__item__list-item {
+  padding: 10px;
+}
+.main__faq-section__img-container {
+  position: relative;
+  margin: 35px 29px auto 43px;
+}
+.main__faq-section__img-container img {
+  height: 320px;
+  width: 378px;
+}
+
 /*# sourceMappingURL=style.css.map */
