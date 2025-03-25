@@ -361,26 +361,6 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     line-height: 1.2rem;
   }
 
-  //&__prev-btn,
-  //&__next-btn {
-  //  position: absolute;
-  //  top: 55%;
-  //  transform: translateY(-50%);
-  //  width: 40px;
-  //  height: 40px;
-  //  background-color: $mainBlueColor;
-  //  opacity: 50%;
-  //  color: white;
-  //  border: none;
-  //  cursor: pointer;
-  //  font-size: 20px;
-  //  border-radius: 5px;
-  //  z-index: 10;
-  //
-  //  &:hover {
-  //    opacity: 80%;
-  //  }
-
     &__prev-btn,
     &__next-btn {
       position: absolute;
@@ -469,6 +449,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     z-index: 1;
     position: absolute;
     right: calc(50% - 55px);
+    cursor: pointer;
   }
 
   &__item-embedded_play {
@@ -477,7 +458,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
     z-index: 2;
     position: absolute;
     right: calc(50% + 165px);
-    cursor: pointer;
+
   }
 }
 

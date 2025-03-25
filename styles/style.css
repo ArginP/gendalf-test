@@ -441,6 +441,7 @@
   z-index: 1;
   position: absolute;
   right: calc(50% - 55px);
+  cursor: pointer;
 }
 .main__environment-section__item-embedded_play {
   height: 90px;
@@ -448,7 +449,6 @@
   z-index: 2;
   position: absolute;
   right: calc(50% + 165px);
-  cursor: pointer;
 }
 
 .main__feed-section {
