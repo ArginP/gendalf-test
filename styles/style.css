@@ -597,4 +597,58 @@
   right: 10px;
 }
 
+.main__student-section {
+  display: flex;
+  align-items: center;
+  width: 1280px;
+}
+.main__student-section__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 415px;
+  width: 100%;
+  background-image: url(https://ik.imagekit.io/arginp/gendalf-test/assets/student__background--desktop.png?updatedAt=1742887266345);
+  background-color: rgba(0, 47, 61, 0.7);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+}
+.main__student-section__title {
+  display: flex;
+  align-items: center;
+  width: 660px;
+  height: 98px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 3.06rem;
+  margin: 83px auto 0 auto;
+}
+.main__student-section__button--primary {
+  height: 50px;
+  width: 289px;
+  background-color: #9BCC37;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 56px auto 0 auto;
+}
+.main__student-section__button--primary:hover {
+  background-color: #77BA04;
+}
+.main__student-section:hover {
+  color: #77BA04;
+}
+
 /*# sourceMappingURL=style.css.map */
