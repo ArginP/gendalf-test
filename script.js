@@ -212,3 +212,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// --- Обработчики кнопок навигации по лендингу ---
+document.addEventListener('DOMContentLoaded', () => {
+    const contactBtns = document.querySelectorAll('[data-contact-btn]');
+    const environmentBtns = document.querySelectorAll('[data-environment-btn]');
+
+    const environmentSection = document.querySelector('[data-environment-section]');
+    const contactSection = document.querySelector('[data-contact-section]');
+
+    contactBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        })
+    })
+
+    environmentBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            environmentSection.scrollIntoView({ behavior: 'smooth' });
+        })
+    })
+});

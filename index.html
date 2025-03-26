@@ -26,7 +26,7 @@
                     <li><a href="#">Отзывы</a></li>
                 </ul>
             </nav>
-            <button type="button" class="header__button">Запись на собеседование</button>
+            <button type="button" class="header__button" id="headerContactBtn" data-contact-btn>Запись на собеседование</button>
         </div>
     </div>
 </header>
@@ -46,10 +46,12 @@
                     </p>
                 </div>
                 <div class="main__hello-section__button-group">
-                    <button type="button" class="main__hello-section__button-group__button--primary">
+                    <button type="button" class="main__hello-section__button-group__button--primary"
+                    id="helloEnvironmentBtn" data-environment-btn>
                         Почему мы
                     </button>
-                    <button type="button" class="main__hello-section__button-group__button--secondary">
+                    <button type="button" class="main__hello-section__button-group__button--secondary"
+                    id="helloContactBtn" data-contact-btn>
                         Записаться на собеседование
                     </button>
                 </div>
@@ -75,10 +77,12 @@
                             методисты и другие, чей карьерный рост не ограничен привычными рамками.</p>
                     </div>
                     <div class="main__about-section__button-group">
-                        <button type="button" class="main__about-section__button-group__button--primary">
+                        <button type="button" class="main__about-section__button-group__button--primary"
+                        id="aboutEnvironmentBtn" data-environment-btn>
                             Узнать больше
                         </button>
-                        <button type="button" class="main__about-section__button-group__button--secondary">
+                        <button type="button" class="main__about-section__button-group__button--secondary"
+                        id="aboutContactBtn" data-contact-btn>
                             Записаться на собеседование
                         </button>
                     </div>
@@ -175,7 +179,7 @@
             </div>
         </section>
 
-        <section class="main__environment-section">
+        <section class="main__environment-section" data-environment-section>
             <div class="main__environment-section__container">
                 <div class="main__environment-section__title">
                     Инфраструктура для твоего развития и роста
@@ -268,7 +272,7 @@
                     <h2>Ты студент и хочешь устроиться на практику?</h2>
                 </div>
 
-                <button type="button" class="main__student-section__button--primary">
+                <button type="button" class="main__student-section__button--primary" id="studentContactBtn" data-contact-btn>
                     Оставить заявку
                 </button>
             </div>
@@ -336,7 +340,7 @@
             </div>
         </section>
 
-        <section class="main__contact-section">
+        <section class="main__contact-section" id="main__contact-section" data-contact-section>
             <div class="main__contact-section__container">
                 <div class="main__contact-section__form-container">
                     <div class="main__contact-section__form-title">Записаться на собеседование</div>
