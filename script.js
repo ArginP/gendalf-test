@@ -233,19 +233,3 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 });
-
-// --- Navbar для мобильной версии ---
-document.addEventListener('DOMContentLoaded', () => {
-    const viewWidth = window.innerWidth;
-    const headerDesktop = document.querySelector('#headerDesktop');
-    const headerMobile = document.querySelector('[data-header-mobile-template]');
-
-    if (viewWidth >= 1280) {
-        return;
-    } else {
-        const headerMobileTemplate = document.importNode(headerMobile.content, true);
-
-        headerDesktop.firstElementChild.outerHTML = '';
-        headerDesktop.append(headerMobileTemplate);
-    }
-})
