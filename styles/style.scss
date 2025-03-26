@@ -1002,6 +1002,11 @@ main {
   background-size: cover;
   background-position: center;
 
+  @media (max-width: 1280px) {
+    width: 380px;
+    height: 707px;
+  }
+
   &__container {
     @include container;
     height: 718px;
@@ -1009,17 +1014,43 @@ main {
     background-color: #00B7ECE7;
     justify-content: center;
     text-align: center;
+
+    @media (max-width: 1280px) {
+      width: 354px;
+      height: 671px;
+    }
+  }
+
+  &__form-container {
+    @media (max-width: 1280px) {
+      width: 100%;
+      height: 100%;
+      @include container;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__form-title {
     @include text-18px(36px, 300);
     color: $whiteColor;
     height: 49px;
+
+    @media (max-width: 1280px) {
+      width: 296px;
+      height: 76px;
+      @include text-18px(28px, 300);
+      line-height: 2.4rem;
+    }
   }
 
   &__form {
     @include container;
     justify-content: center;
+
+    @media (max-width: 1280px) {
+      width: 296px;
+    }
   }
 
   &__form-fields-container {
@@ -1032,6 +1063,10 @@ main {
   &__form-field-wrapper {
     position: relative; // Для позиционирования ::after
     width: 568px;
+
+    @media (max-width: 1280px) {
+      width: 296px;
+    }
 
     &--error::after {
       content: "";
@@ -1090,6 +1125,11 @@ main {
     height: 108px;
     margin-top: 17px;
     resize: none;
+
+    @media (max-width: 1280px) {
+      width: 296px;
+      height: 50px;
+    }
   }
 
   &__form-fieldset {
@@ -1100,6 +1140,12 @@ main {
     align-items: start;
     width: 100%;
     color: $whiteColor;
+
+    @media (max-width: 1280px) {
+      width: 296px;
+      font-size: 16px;
+      gap: 5px;
+    }
 
     & input[type=radio] {
       display: none;
@@ -1116,6 +1162,10 @@ main {
     height: 25px;
     margin-top: 17px;
     margin-bottom: 10px;
+
+    @media (max-width: 1280px) {
+      text-align: start;
+    }
   }
 
   &__form-fieldset__radio-item {
@@ -1153,8 +1203,19 @@ main {
     @include margin-top(17px);
     align-items: flex-start;
 
+    @media (max-width: 1280px) {
+      width: 296px;
+      height: 110px;
+      flex-direction: column;
+    }
+
     button {
       height: 100%;
+
+      @media (max-width: 1280px) {
+        width: 100%;
+        height: 50px;
+      }
     }
 
     &--upload {
