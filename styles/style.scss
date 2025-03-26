@@ -52,12 +52,11 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
   width: 1px;
 }
 
-// --- Header ---
+// --- Header Desktop ---
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $lightestGrayColor;
   width: 100%;
 
   &__container {
@@ -67,21 +66,7 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 
     @media (max-width: 1280px) {
       width: 380px;
-      //display: none;
-      //visibility: hidden;
     }
-
-    //&:after {
-    //  @media (max-width: 1280px) {
-    //    visibility: visible;
-    //    content: 'whatever it is you want to add';
-    //    display: block;
-    //    height: 101px;
-    //    background-color: $whiteColor;
-    //    justify-content: center;
-    //    align-items: center;
-    //  }
-    //}
   }
 
   &__logo {
@@ -124,6 +109,31 @@ $darkBlueSemitransparentColor: rgba(0, 47, 61, 0.77);
 
     &:hover {
       color: $mainBlueHighlightColor;
+    }
+  }
+}
+
+// --- Header Mobile ---
+.header--mobile {
+  display: flex;
+  justify-content: center;
+
+  .header__container--mobile {
+    @include container;
+    width: 380px;
+    height: 101px;
+
+    .header__navbar--mobile {
+      @include container;
+      flex-direction: row;
+      width: 100%;
+
+      .header__navbar__list--mobile {
+        @include container;
+        width: 100%;
+        justify-content: space-between;
+        margin: 9px;
+      }
     }
   }
 }

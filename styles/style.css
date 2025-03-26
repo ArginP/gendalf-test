@@ -14,7 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fafafa;
   width: 100%;
 }
 .header__container {
@@ -72,6 +71,30 @@
 }
 .header__button:hover {
   color: #1998D5;
+}
+
+.header--mobile {
+  display: flex;
+  justify-content: center;
+}
+.header--mobile .header__container--mobile {
+  display: flex;
+  align-items: center;
+  width: 380px;
+  height: 101px;
+}
+.header--mobile .header__container--mobile .header__navbar--mobile {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.header--mobile .header__container--mobile .header__navbar--mobile .header__navbar__list--mobile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 9px;
 }
 
 main {
