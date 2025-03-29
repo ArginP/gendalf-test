@@ -952,8 +952,11 @@ main {
       & > summary::before {
         content: url("https://ik.imagekit.io/arginp/gendalf-test/assets/marker--open.png?tr=w-23,h-23");
       }
-    }
 
+      summary:hover {
+        color: $mainBlueHighlightColor;
+      }
+    }
   }
 
   &__item-summary {
@@ -964,6 +967,10 @@ main {
     padding-left: 28px; // отступ для текста, чтобы освободить место под маркер
     margin-left: -28px; // чтобы выровнять details и summary
     position: relative;
+
+    &:hover {
+      color: $mainBlueHighlightColor;
+    }
 
     &::-webkit-details-marker {
       display: none;

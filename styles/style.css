@@ -1015,6 +1015,9 @@ main {
 .main__faq-section__item:open > summary::before {
   content: url("https://ik.imagekit.io/arginp/gendalf-test/assets/marker--open.png?tr=w-23,h-23");
 }
+.main__faq-section__item:open summary:hover {
+  color: #1998D5;
+}
 .main__faq-section__item-summary {
   text-decoration: underline;
   margin-bottom: 8px;
@@ -1023,6 +1026,9 @@ main {
   padding-left: 28px;
   margin-left: -28px;
   position: relative;
+}
+.main__faq-section__item-summary:hover {
+  color: #1998D5;
 }
 .main__faq-section__item-summary::-webkit-details-marker {
   display: none;
