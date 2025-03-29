@@ -72,6 +72,22 @@ const scroller = (wrapper, slider, prevBtn, nextBtn, itemWidth, margin) => {
     });
 }
 
+// --- Логика работы прокрутки слайдера "Живая лента" ---
+const feedScroller = () => {
+    const wrapper = document.querySelector('#feedSliderWrapper');
+    const slider = document.querySelector('#feedSliderItemContainer');
+    const prevBtn = document.querySelector('#feedSliderPrevBtn');
+    const nextBtn = document.querySelector('#feedSliderNextBtn');
+    const itemWidth = slider.querySelector('.main__feed-section__item').offsetWidth + 75; // Ширина элемента + gap
+    let margin = 0; // подстройка под отступы элементов слайдера
+
+    if (window.innerWidth < 1280) {
+        margin = 100; // Подстройка слайдера по отступы мобильной версии
+    }
+
+    scroller(wrapper, slider, prevBtn, nextBtn, itemWidth, margin);
+}
+
 // --- Логика работы прокрутки слайдера "Наши ценности" ---
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('#valuesSliderWrapper');
@@ -84,16 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
     scroller(wrapper, slider, prevBtn, nextBtn, itemWidth, margin);
 });
 
-// --- Логика работы прокрутки слайдера "Живая лента" ---
+// --- Запуск слайдера "Живая лента" при загрузке ---
 document.addEventListener('DOMContentLoaded', () => {
-    const wrapper = document.querySelector('#feedSliderWrapper');
-    const slider = document.querySelector('#feedSliderItemContainer');
-    const prevBtn = document.querySelector('#feedSliderPrevBtn');
-    const nextBtn = document.querySelector('#feedSliderNextBtn');
-    const itemWidth = slider.querySelector('.main__feed-section__item').offsetWidth + 75; // Ширина элемента + gap
-    const margin = 100; // подстройка под отступы элементов слайдера
+    feedScroller();
+});
 
-    scroller(wrapper, slider, prevBtn, nextBtn, itemWidth, margin);
+// --- Обновление слайдера "Живая лента" при изменении размера окна ---
+window.addEventListener('resize', () => {
+    feedScroller();
 });
 
 // --- Логика работы формы ---
